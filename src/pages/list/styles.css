@@ -1,0 +1,49 @@
+.list_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 1em;
+}
+
+.list_container a {
+  text-decoration: none;
+  color: black;
+}
+
+.list_container .list_item {
+  width: 300px;
+  border: 2px solid #eeb830;
+  flex: 0 1 auto;
+}
+
+.list_container .list_item .list_item_info {
+  padding: 0.25em;
+}
+
+.list_container .list_item .list_item_info h2 {
+  text-align: center;
+}
+
+.list_container .list_item .list_item_info .item_ratings {
+  font-size: 1.5em;
+}
+
+.list_container .list_item .list_item_info p {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.list_container .list_item .list_item_info .tag_group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5em;
+}
+
+.list_container .list_item .list_item_info .tag_group .item_tag {
+  background-color: #eeb830;
+  border-radius: 50%;
+  font-size: 1.25em;
+  padding: 0.5em;
+}
