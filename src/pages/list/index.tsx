@@ -3,33 +3,14 @@ import api from "../../services/api";
 import { Link } from "react-router-dom";
 import "./styles.css";
 import { Rating } from "../../components/rating";
-
-interface Lista {
-  id: number;
-  name: string;
-  caloriesPerServing: number;
-  cookTimeMinutes: number;
-  cuisine: string;
-  difficulty: string;
-  image: string;
-  ingredients: string[];
-  instructions: string[];
-  mealType: string[];
-  prepTimeMinutes: number;
-  rating: number;
-  reviewCount: number;
-  servings: number;
-  tags: string[];
-  userId: number;
-}
+import type { Receita } from "../../interfaces/receita";
 
 export function List() {
-  const [lista, setLista] = useState<Lista[]>([]);
+  const [lista, setLista] = useState<Receita[]>([]);
 
   async function getLista() {
     try {
       const response = await api.get("recipes?limit=0");
-      console.log(response.data);
       setLista(response.data.recipes);
     } catch (error) {
       alert("Erro ao buscar lista de receitas");
@@ -43,7 +24,7 @@ export function List() {
   return (
     <main className="list_container">
       {lista.map((item) => (
-        <Link to={`/${item.id}`} key={item.id} style={{ display: "flex" }}>
+        <Link to={`/${item.id}`} key={item.id}>
           <div className="list_item">
             <img src={item.image} width="100%" />
             <div className="list_item_info">
@@ -56,8 +37,10 @@ export function List() {
               <p>Difficulty: {item.difficulty}</p>
 
               <div className="tag_group">
-                {item.tags.map((tag) => (
-                  <span className="item_tag">{tag}</span>
+                {item.tags.map((tag, index) => (
+                  <span className="item_tag" key={index}>
+                    {tag}
+                  </span>
                 ))}
               </div>
             </div>
