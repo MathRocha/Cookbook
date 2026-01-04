@@ -1,0 +1,30 @@
+.link_back {
+  margin: .5em;
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  text-decoration: none;
+  color: black;
+}
+
+.receita_container {
+  margin: .5em;
+}
+
+.receita_prep {
+  border: 2px solid #eeb830;
+  padding: 1em 1.5em;
+  font-size: 1.25em;
+}
+
+
+@media (min-width: 576px) {
+  .receita_container .list_item {
+    display: flex;
+    gap: 10px;
+  }
+
+  .receita_container .list_item img {
+    width: 200px;
+  }
+}

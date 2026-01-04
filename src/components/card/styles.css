@@ -1,0 +1,35 @@
+.list_item {
+  border: 2px solid #eeb830;
+}
+
+.list_item .list_item_info {
+  padding: 0.25em;
+  width: 100%;
+}
+
+.list_item .list_item_info h2 {
+  text-align: center;
+}
+
+.list_item .list_item_info .item_ratings {
+  font-size: 1.5em;
+}
+
+.list_item .list_item_info p {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.list_item .list_item_info .tag_group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5em;
+}
+
+.list_item .list_item_info .tag_group .item_tag {
+  background-color: #eeb830;
+  border-radius: 50%;
+  font-size: 1.25em;
+  padding: 0.5em;
+}
